@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Keep in Touch
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="none">
+    <ion-item *ngFor="let new of news">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="new.urlToImage"></ion-img>
+      </ion-thumbnail>
+      <div class="new-container">
+        <p text-wrap><strong>{{new.source.name}}</strong></p>
+        <p text-wrap class="info-text">{{new.title}}</p>
+        <p text-wrap class="date-text">{{new.publishedAt | date:'dd/MM/yyyy h:mm a'}}</p>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
